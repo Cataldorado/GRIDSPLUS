@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
+
+  /* Heritage+ green (existing platform chrome) */
+  --color-heritage-green: #1a7a3c;
+  --color-heritage-green-dark: #146030;
+
+  /* GRIDS+ navy (new experience) */
+  --color-grids-navy: #0f1f3d;
+  --color-grids-navy-light: #16294f;
+  --color-grids-blue: #2f5fd9;
+
+  /* RoofHub chrome (second native platform GRIDS+ posts into) */
+  --color-roofhub-red: #82202f;
+  --color-roofhub-red-dark: #6c1a27;
+  --color-roofhub-navy: #232838;
+  --color-roofhub-gold: #e8a33d;
+
+  --color-surface: #f7f8fa;
+  --color-surface-alt: #eef1f5;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--color-surface);
+  color: #1a1d23;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@keyframes tri-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .35; transform: scale(.82); }
+}
+@keyframes tri-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+.tri-scroll::-webkit-scrollbar { width: 10px; }
+.tri-scroll::-webkit-scrollbar-thumb {
+  background: oklch(0.86 0.008 255);
+  border-radius: 99px;
+  border: 3px solid oklch(0.975 0.004 85);
+}
